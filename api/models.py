@@ -27,15 +27,6 @@ class Client(models.Model):
         return f"{self.client_voornaam} {self.client_achternaam} | €{self.client_saldo.saldo_aantal if self.client_saldo else 0}"
 
 
-# class Kaart(models.Model):
-#     class Meta:
-#         verbose_name_plural = "Kaarten"
-#     kaart_client = models.ForeignKey(Client, on_delete=models.SET_NULL, blank=True, null=True)
-
-#     def __str__(self):
-#         return str(self.kaart_client)
-
-
 class Artikel(models.Model):
     class Meta:
         verbose_name_plural = "Artikelen"

@@ -3,20 +3,6 @@ from rest_framework.serializers import HyperlinkedModelSerializer, SerializerMet
 from .models import Client, Transactie, Artikel, Saldo
 
 
-# class KaartSerializer(ModelSerializer):
-#     saldo = SerializerMethodField()
-#     class Meta:
-#         model = Kaart
-#         fields = (
-#             'id',
-#             'kaart_client',
-#             'saldo'
-#         )
-
-#     def get_saldo(self, obj):
-#         if obj.saldo_set.first():
-#             return f"€{str(obj.saldo_set.first().saldo_aantal)}"
-
 class SaldoSerializer(ModelSerializer):
     class Meta:
         model = Saldo

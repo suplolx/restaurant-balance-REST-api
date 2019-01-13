@@ -10,11 +10,6 @@ class ClientView(viewsets.ModelViewSet):
     serializer_class = ClientSerializer
 
 
-# class KaartView(viewsets.ModelViewSet):
-#     queryset = Kaart.objects.all()
-#     serializer_class = KaartSerializer
-
-
 class SaldoView(viewsets.ModelViewSet):
     queryset = Saldo.objects.all()
     serializer_class = SaldoSerializer
@@ -28,9 +23,3 @@ class ArtikelView(viewsets.ModelViewSet):
 class TransactieView(viewsets.ModelViewSet):
     queryset = Transactie.objects.all()
     serializer_class = TransactieSerializer
-
-
-# class UserView(viewsets.ModelViewSet):
-#     queryset = User.objects.all()
-#     serializer_class = UserSerializer
-#     permission_classes = (permissions.IsAdminUser,)
