@@ -1,0 +1,8 @@
+venv
+.vscode
+/__pychache__
+__pycache__/
+*.pyc
+local_settings.py
+migrations
+db.sqlite3
