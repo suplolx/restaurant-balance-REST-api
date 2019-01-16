@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+</head>
+<body>
+    
+    <div id="root">
+        
+    </div>
+
+
+    <script src="js/login.js"></script>
+    <script>
+        var root = document.querySelectorAll("#root");
+        fetch("http://127.0.0.1:8000/api/v1/client/?format=json", {
+            method: "GET",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Token ' + token
+            }    
+        })
+         .then(res => {
+             console.log(res);
+             return res.json()
+         })
+         .then(data => {
+            root[0].innerHtml = "";
+            root[0].innerHtml += `
+            <p>Suplol</p>`
+            console.log(data)
+         })
+    
+    </script>
+</body>
+</html>
