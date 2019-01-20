@@ -14,6 +14,7 @@ class Client(models.Model):
     
     client_voornaam = models.CharField(max_length=50)
     client_achternaam = models.CharField(max_length=100)
+    client_aangemaakt = models.DateTimeField(auto_now_add=True)
     client_saldo = models.ForeignKey(Saldo, on_delete=models.CASCADE, blank=True, null=True)
 
     def save(self, *args, **kwargs):

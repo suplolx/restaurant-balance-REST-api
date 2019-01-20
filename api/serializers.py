@@ -11,6 +11,11 @@ class SaldoSerializer(ModelSerializer):
             'saldo_aantal',
         )
 
+    def update(self, instance, validated_data):
+        instance_saldo = instance.saldo_aantal
+        instance.saldo_aantal = instance_saldo + validated_data.get('saldo_aantal')
+        instance.save()
+        return instance
 
 class ClientSerializer(HyperlinkedModelSerializer):
     saldo = SerializerMethodField()
@@ -20,6 +25,7 @@ class ClientSerializer(HyperlinkedModelSerializer):
             'id',
             'client_voornaam',
             'client_achternaam',
+            'client_aangemaakt',
             'client_saldo',
             'saldo',
         )

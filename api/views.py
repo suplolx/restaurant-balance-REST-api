@@ -6,7 +6,7 @@ from .serializers import ClientSerializer, ArtikelSerializer, TransactieSerializ
 
 
 class ClientView(viewsets.ModelViewSet):
-    queryset = Client.objects.all()
+    queryset = Client.objects.all().order_by('-client_aangemaakt')
     serializer_class = ClientSerializer
 
 
